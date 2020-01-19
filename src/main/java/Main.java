@@ -49,14 +49,13 @@ public class Main {
 
     static void turnPower() {
         if (airConditioner.isPower()) {
-            System.out.println(B+ANSI_CYAN+airConditioner.off());
+            airConditioner.off.entry();
             exit(0);
         }
         airConditioner.setPower(true);
-        System.out.println(ANSI_BLUE+airConditioner.waiting(30));
-        System.out.println(B+ANSI_CYAN+airConditioner.on()+R);
-        System.out.println(ANSI_BLUE+airConditioner.getCurrent().mode());
-        System.out.println(airConditioner.waiting(120)+R+"\n\n");
+        airConditioner.wait.entry();
+//        System.out.println(ANSI_BLUE+airConditioner.getCurrent().mode());
+//        System.out.println(airConditioner.on+R+"\n\n");
     }
 
     static void changeCTemp() {
@@ -64,9 +63,9 @@ public class Main {
             System.out.print(B+"Enter AC temperature: "+R);
             int cTemp = new Scanner(System.in).nextInt();
             System.out.println(ANSI_BLUE+airConditioner.setCTemp(cTemp));
-            System.out.println(airConditioner.getCurrent().mode());
-            System.out.println(airConditioner.waiting(120));
-            System.out.println(airConditioner.getCurrent().operating()+R+"\n");
+//            System.out.println(airConditioner.getCurrent().mode());
+//            System.out.println(airConditioner.waiting(120));
+//            System.out.println(airConditioner.getCurrent().operating()+R+"\n");
         } else
             System.out.println(ANSI_RED+"\nPlease turn ON before\n"+R);
     }
@@ -76,7 +75,7 @@ public class Main {
             System.out.print(B+"Enter room temperature: "+R);
             int rTemp = new Scanner(System.in).nextInt();
             System.out.println("\n"+ANSI_BLUE+airConditioner.setRTemp(rTemp));
-            System.out.println(airConditioner.getCurrent().operating()+R);
+//            System.out.println(airConditioner.getCurrent().operating()+R);
         } else
             System.out.println(ANSI_RED+"\nPlease turn ON before\n"+R);
     }

@@ -1,31 +1,16 @@
-public class AirConditioner {
+public class AirConditioner extends ComplexState {
     private boolean power;
-    private Mode current;
-    private int c_Temp;
-    private int r_Temp;
+    public static double r_Temp;
+    public static double c_Temp;
+    public ComplexState on;
+    public State off;
+    public State wait;
 
     public AirConditioner() {
-        System.out.println(Main.B+Main.ANSI_CYAN+off()+"\n");
-    }
-
-    private void setCurrentMode() {
-        if (r_Temp <= c_Temp+5)
-            current = new HeatMode();
-        if (c_Temp <= r_Temp+5)
-            current = new CoolMode();
-    }
-
-    public String on() {
-        power = true;
-        c_Temp = 25;
-        r_Temp = 25;
-        setCurrentMode();
-        return "ON";
-    }
-
-    public String off() {
-        power = false;
-        return "OFF";
+        on = new On(this);
+        off = new Off(this);
+        wait = new Wait(this);
+        this.setState(off);
     }
 
     public boolean isPower() {
@@ -38,27 +23,13 @@ public class AirConditioner {
 
     public String setRTemp(int temp) {
         r_Temp = temp;
-        setCurrentMode();
+        on.setState(this.getState());
         return "set r_temp to "+temp;
     }
 
     public String setCTemp(int temp) {
         c_Temp = temp;
-        setCurrentMode();
+        on.setState(this.getState());
         return "set c_temp to "+temp;
-    }
-
-    public String waiting(int sec) {
-        switch(sec) {
-            case 30:
-                return "WAITING "+sec+" SECONDS";
-            case 120:
-                return "OPERATION-FANNING ("+sec+" SECONDS AT LEAST)";
-        }
-        return "";
-    }
-
-    public Mode getCurrent() {
-        return current;
     }
 }
