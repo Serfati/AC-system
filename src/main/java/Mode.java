@@ -9,4 +9,12 @@ public class Mode extends ComplexState {
         this.cool = new Cool(this);
         this.setState(cool);
     }
+
+    public Mode() {
+    }
+
+    @Override
+    public void entry() {
+        System.out.println(Main.ANSI_BLUE+"-"+Main.R);
+    }
 }

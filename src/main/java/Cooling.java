@@ -1,7 +1,8 @@
-public class Cooling extends State {
+public class Cooling extends Operation {
     public ComplexState operation;
 
     public Cooling(Operation operation) {
+        super();
         this.operation = operation;
     }
 

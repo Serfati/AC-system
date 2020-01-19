@@ -18,21 +18,20 @@ public class On extends ComplexState {
 
     @Override
     public void setState(State st) {
-        if (state != null)
-            state.exit();
-        if (AirConditioner.r_Temp <= AirConditioner.c_Temp+5) {
-            mode.setState(new Heat((Mode) mode).mode);
-            operation.setState(new Heating((Operation) operation).operation);
-            mode.entry();
-            operation.entry();
+        //TODO still missing
+        if (AirConditioner.r_Temp-5 >= AirConditioner.c_Temp) {
+            mode.setState(new Cool((Mode) mode));
+            operation.setState(new Fanning((Operation) operation));
+            operation.setState(new Cooling((Operation) operation));
+            return;
         }
-        if (AirConditioner.c_Temp <= AirConditioner.r_Temp+5) {
-            mode.setState(new Cool((Mode) mode).mode);
-            operation.setState(new Cooling((Operation) operation).operation);
-            mode.entry();
-            operation.entry();
+
+        if (AirConditioner.r_Temp+5 <= AirConditioner.c_Temp) {
+            mode.setState(new Heat((Mode) mode));
+            operation.setState(new Fanning((Operation) operation));
+            operation.setState(new Heating((Operation) operation));
+            return;
         }
-        if (state != null)
-            state.entry();
+        operation.getState().entry();
     }
 }

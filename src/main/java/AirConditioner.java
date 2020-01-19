@@ -21,15 +21,14 @@ public class AirConditioner extends ComplexState {
         power = on;
     }
 
-    public String setRTemp(int temp) {
+    public void setRTemp(int temp) {
         r_Temp = temp;
-        on.setState(this.getState());
-        return "set r_temp to "+temp;
+        System.out.println(Main.ANSI_BLUE+"\nset r_temp to "+Main.R+temp);
     }
 
-    public String setCTemp(int temp) {
+    public void setCTemp(int temp) {
         c_Temp = temp;
+        System.out.println(Main.ANSI_BLUE+"\nset c_temp to "+Main.R+temp);
         on.setState(this.getState());
-        return "set c_temp to "+temp;
     }
 }

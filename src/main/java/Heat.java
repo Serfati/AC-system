@@ -1,4 +1,4 @@
-public class Heat extends State {
+public class Heat extends Mode {
     public ComplexState mode;
 
     public Heat(Mode mode) {
@@ -7,6 +7,6 @@ public class Heat extends State {
 
     @Override
     public void entry() {
-        System.out.println("MODE-HEAT");
+        System.out.println(Main.ANSI_BLUE+"MODE-HEAT"+Main.R);
     }
 }

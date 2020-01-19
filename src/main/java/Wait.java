@@ -1,4 +1,3 @@
-
 public class Wait extends State {
     public AirConditioner context;
 

@@ -1,4 +1,4 @@
-public class Heating extends State {
+public class Heating extends Operation {
     public ComplexState operation;
 
     public Heating(Operation operation) {

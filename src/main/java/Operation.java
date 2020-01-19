@@ -11,4 +11,12 @@ public class Operation extends ComplexState {
         this.heating = new Heating(this);
         this.setState(fanning);
     }
+
+    public Operation() {
+    }
+
+    @Override
+    public void entry() {
+        System.out.println(Main.ANSI_BLUE+"-"+Main.R);
+    }
 }

@@ -62,7 +62,7 @@ public class Main {
         if (airConditioner.isPower()) {
             System.out.print(B+"Enter AC temperature: "+R);
             int cTemp = new Scanner(System.in).nextInt();
-            System.out.println(ANSI_BLUE+airConditioner.setCTemp(cTemp));
+            airConditioner.setCTemp(cTemp);
 //            System.out.println(airConditioner.getCurrent().mode());
 //            System.out.println(airConditioner.waiting(120));
 //            System.out.println(airConditioner.getCurrent().operating()+R+"\n");
@@ -74,7 +74,7 @@ public class Main {
         if (airConditioner.isPower()) {
             System.out.print(B+"Enter room temperature: "+R);
             int rTemp = new Scanner(System.in).nextInt();
-            System.out.println("\n"+ANSI_BLUE+airConditioner.setRTemp(rTemp));
+            airConditioner.setRTemp(rTemp);
 //            System.out.println(airConditioner.getCurrent().operating()+R);
         } else
             System.out.println(ANSI_RED+"\nPlease turn ON before\n"+R);

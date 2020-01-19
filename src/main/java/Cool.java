@@ -1,4 +1,4 @@
-public class Cool extends State {
+public class Cool extends Mode {
     public ComplexState mode;
 
     public Cool(Mode mode) {

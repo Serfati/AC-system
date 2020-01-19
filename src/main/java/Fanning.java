@@ -1,4 +1,4 @@
-public class Fanning extends State {
+public class Fanning extends Operation {
     public ComplexState operation;
 
     public Fanning(Operation operation) {
@@ -7,6 +7,6 @@ public class Fanning extends State {
 
     @Override
     public void entry() {
-        System.out.println(Main.ANSI_BLUE+"OPERATION-FANNING (120 SECONDS AT LEAST)\n"+Main.R);
+        System.out.println(Main.ANSI_BLUE+"OPERATION-FANNING (120 SECONDS AT LEAST)"+Main.R);
     }
 }
