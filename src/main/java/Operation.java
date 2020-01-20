@@ -1,5 +1,4 @@
 public class Operation extends ComplexState {
-
     State heating;
     State cooling;
     State fanning;

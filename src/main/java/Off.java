@@ -1,9 +1,8 @@
 public class Off extends State {
-
-    public AirConditioner contex;
+    AirConditioner context;
 
     public Off(AirConditioner airConditioner) {
-        this.contex = airConditioner;
+        this.context = airConditioner;
     }
 
     @Override

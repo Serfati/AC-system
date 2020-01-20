@@ -1,13 +1,12 @@
 public class On extends ComplexState {
-
-    private Operation operation;
-    private Mode mode;
-    public AirConditioner contex;
+    Mode mode;
+    Operation operation;
+    AirConditioner context;
 
     public On(AirConditioner airConditioner) {
         mode = new Mode(this);
         operation = new Operation(this);
-        this.contex = airConditioner;
+        this.context = airConditioner;
     }
 
     @Override
@@ -19,9 +18,5 @@ public class On extends ComplexState {
 
     public Mode getMode() {
         return mode;
-    }
-
-    public AirConditioner getAirConditioner() {
-        return contex;
     }
 }

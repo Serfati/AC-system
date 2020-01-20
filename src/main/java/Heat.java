@@ -1,5 +1,5 @@
 public class Heat extends State {
-    public Mode mode;
+    Mode mode;
 
     public Heat(Mode mode) {
         this.mode = mode;

@@ -1,6 +1,5 @@
 public class ComplexState extends State {
-
-    public State state; // current state
+    State state; // current state
 
     public void setState(State st) {
         if (state != null)

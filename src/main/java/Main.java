@@ -52,24 +52,24 @@ public class Main {
             airConditioner.off.entry();
             exit(0);
         }
-        airConditioner.turnOn();
+        airConditioner.powerOn();
     }
 
     static void changeCTemp() {
         if (airConditioner.getCurrentState() == airConditioner.on) {
-            System.out.print(B+"Enter AC temperature: "+R);
+            System.out.print(B+"Set AC temperature: "+R);
             int cTemp = new Scanner(System.in).nextInt();
             airConditioner.setCTemp(cTemp);
         } else
-            System.out.println(ANSI_RED+"\nPlease turn ON before\n"+R);
+            System.out.println(ANSI_RED+"\n turn ON before\n"+R);
     }
 
     static void changeRTemp() {
         if (airConditioner.getCurrentState() == airConditioner.on) {
-            System.out.print(B+"Enter room temperature: "+R);
+            System.out.print(B+"Set room temperature: "+R);
             int rTemp = new Scanner(System.in).nextInt();
             airConditioner.setRTemp(rTemp);
         } else
-            System.out.println(ANSI_RED+"\nPlease turn ON before\n"+R);
+            System.out.println(ANSI_RED+"\n turn ON before\n"+R);
     }
 }

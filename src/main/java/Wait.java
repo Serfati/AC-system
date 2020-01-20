@@ -1,5 +1,5 @@
 public class Wait extends State {
-    public AirConditioner context;
+    AirConditioner context;
 
     public Wait(AirConditioner airConditioner) {
         this.context = airConditioner;

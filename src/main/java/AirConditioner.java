@@ -1,9 +1,9 @@
 public class AirConditioner extends ComplexState {
-    public static int c_Temp;
-    public static int r_Temp;
-    public Wait wait;
-    public On on;
-    public Off off;
+    static int c_Temp;
+    static int r_Temp;
+    Wait wait;
+    On on;
+    Off off;
 
     public AirConditioner() {
         wait = new Wait(this);
@@ -12,7 +12,7 @@ public class AirConditioner extends ComplexState {
         this.setState(off);
     }
 
-    public void turnOn() {
+    public void powerOn() {
         c_Temp = 25;
         r_Temp = 25;
         setState(wait);
@@ -21,23 +21,19 @@ public class AirConditioner extends ComplexState {
     public void setRTemp(int temp) {
         r_Temp = temp;
         System.out.println(Main.ANSI_BLUE+"\nset r_temp to "+Main.R+temp);
-        if (getCurrentState() == on)
-            on.getCurrentState().entry();
+        if (getCurrentState() == on) {
+            On s = (On) getCurrentState();
+            s.getMode().entry();
+        }
 
     }
 
     public void setCTemp(int temp) {
         c_Temp = temp;
         System.out.println(Main.ANSI_BLUE+"\nset c_temp to "+Main.R+temp);
-        if (getCurrentState() == on)
-            on.getCurrentState().entry();
-    }
-
-    public int getR_Temp() {
-        return r_Temp;
-    }
-
-    public int getC_Temp() {
-        return c_Temp;
+        if (getCurrentState() == on) {
+            On s = (On) getCurrentState();
+            s.getMode().entry();
+        }
     }
 }

@@ -1,5 +1,5 @@
 public class Cooling extends State {
-    public Operation operation;
+    Operation operation;
 
     public Cooling(Operation operation) {
         this.operation = operation;

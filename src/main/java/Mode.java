@@ -1,8 +1,7 @@
 public class Mode extends ComplexState {
-
-    public On on;
-    public Heat heat;
-    public Cool cool;
+    On on;
+    Heat heat;
+    Cool cool;
 
     public Mode(On on) {
         this.on = on;
