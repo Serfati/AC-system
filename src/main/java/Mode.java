@@ -1,20 +1,24 @@
 public class Mode extends ComplexState {
-    public ComplexState on;
-    public State heat;
-    public State cool;
+
+    public On on;
+    public Heat heat;
+    public Cool cool;
 
     public Mode(On on) {
         this.on = on;
         this.heat = new Heat(this);
         this.cool = new Cool(this);
-        this.setState(cool);
-    }
-
-    public Mode() {
     }
 
     @Override
     public void entry() {
-        System.out.println(Main.ANSI_BLUE+"-"+Main.R);
+        int r_Temp = AirConditioner.r_Temp;
+        int c_Temp = AirConditioner.c_Temp;
+        if (getCurrentState() == null) {
+            setState(r_Temp < c_Temp ? heat : cool);
+            return;
+        }
+        if (r_Temp <= c_Temp-5) setState(heat);
+        if (r_Temp >= c_Temp+5) setState(cool);
     }
 }

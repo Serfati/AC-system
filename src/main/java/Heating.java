@@ -1,5 +1,5 @@
-public class Heating extends Operation {
-    public ComplexState operation;
+public class Heating extends State {
+    public Operation operation;
 
     public Heating(Operation operation) {
         this.operation = operation;

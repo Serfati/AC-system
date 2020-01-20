@@ -1,22 +1,19 @@
 public class Operation extends ComplexState {
-    public ComplexState on;
-    public State fanning;
-    public State colling;
-    public State heating;
 
-    public Operation(On on) {
-        this.on = on;
-        this.fanning = new Fanning(this);
-        this.colling = new Cooling(this);
-        this.heating = new Heating(this);
-        this.setState(fanning);
+    State heating;
+    State cooling;
+    State fanning;
+    On on;
+
+    public Operation(State on) {
+        heating = new Heating(this);
+        cooling = new Cooling(this);
+        fanning = new Fanning(this);
+        this.on = (On) on;
     }
 
-    public Operation() {
-    }
-
-    @Override
     public void entry() {
-        System.out.println(Main.ANSI_BLUE+"-"+Main.R);
+        //TODO still missing
+        this.setState(fanning);
     }
 }

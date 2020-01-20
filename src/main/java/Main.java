@@ -48,34 +48,27 @@ public class Main {
     }
 
     static void turnPower() {
-        if (airConditioner.isPower()) {
+        if (airConditioner.getCurrentState() == airConditioner.on) {
             airConditioner.off.entry();
             exit(0);
         }
-        airConditioner.setPower(true);
-        airConditioner.wait.entry();
-//        System.out.println(ANSI_BLUE+airConditioner.getCurrent().mode());
-//        System.out.println(airConditioner.on+R+"\n\n");
+        airConditioner.turnOn();
     }
 
     static void changeCTemp() {
-        if (airConditioner.isPower()) {
+        if (airConditioner.getCurrentState() == airConditioner.on) {
             System.out.print(B+"Enter AC temperature: "+R);
             int cTemp = new Scanner(System.in).nextInt();
             airConditioner.setCTemp(cTemp);
-//            System.out.println(airConditioner.getCurrent().mode());
-//            System.out.println(airConditioner.waiting(120));
-//            System.out.println(airConditioner.getCurrent().operating()+R+"\n");
         } else
             System.out.println(ANSI_RED+"\nPlease turn ON before\n"+R);
     }
 
     static void changeRTemp() {
-        if (airConditioner.isPower()) {
+        if (airConditioner.getCurrentState() == airConditioner.on) {
             System.out.print(B+"Enter room temperature: "+R);
             int rTemp = new Scanner(System.in).nextInt();
             airConditioner.setRTemp(rTemp);
-//            System.out.println(airConditioner.getCurrent().operating()+R);
         } else
             System.out.println(ANSI_RED+"\nPlease turn ON before\n"+R);
     }

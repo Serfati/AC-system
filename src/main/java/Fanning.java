@@ -1,5 +1,5 @@
-public class Fanning extends Operation {
-    public ComplexState operation;
+public class Fanning extends State {
+    public Operation operation;
 
     public Fanning(Operation operation) {
         this.operation = operation;

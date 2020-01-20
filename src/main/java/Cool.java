@@ -1,5 +1,5 @@
-public class Cool extends Mode {
-    public ComplexState mode;
+public class Cool extends State {
+    public Mode mode;
 
     public Cool(Mode mode) {
         this.mode = mode;

@@ -1,5 +1,5 @@
-public class Heat extends Mode {
-    public ComplexState mode;
+public class Heat extends State {
+    public Mode mode;
 
     public Heat(Mode mode) {
         this.mode = mode;
