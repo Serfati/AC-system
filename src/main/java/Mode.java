@@ -17,7 +17,7 @@ public class Mode extends ComplexState {
             setState(r_Temp < c_Temp ? heat : cool);
             return;
         }
-        if (r_Temp <= c_Temp-5) setState(heat);
-        if (r_Temp >= c_Temp+5) setState(cool);
+        if (r_Temp < c_Temp-5) setState(heat);
+        if (r_Temp > c_Temp+5) setState(cool);
     }
 }

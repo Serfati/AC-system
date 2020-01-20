@@ -24,8 +24,8 @@ public class AirConditioner extends ComplexState {
         if (getCurrentState() == on) {
             On s = (On) getCurrentState();
             s.getMode().entry();
+            s.getOperation().entry();
         }
-
     }
 
     public void setCTemp(int temp) {
@@ -34,6 +34,7 @@ public class AirConditioner extends ComplexState {
         if (getCurrentState() == on) {
             On s = (On) getCurrentState();
             s.getMode().entry();
+            s.getOperation().entry();
         }
     }
 }

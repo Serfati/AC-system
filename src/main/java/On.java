@@ -19,4 +19,12 @@ public class On extends ComplexState {
     public Mode getMode() {
         return mode;
     }
+
+    public Operation getOperation() {
+        return operation;
+    }
+
+    public AirConditioner getAirConditioner() {
+        return context;
+    }
 }
