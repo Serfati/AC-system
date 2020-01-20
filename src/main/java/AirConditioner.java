@@ -18,7 +18,7 @@ public class AirConditioner extends ComplexState {
 
     public void setRTemp(int temp) {
         r_Temp = temp;
-        System.out.println(Main.ANSI_BLUE+"\nset r_temp to "+Main.R+temp);
+        System.out.println(Main.ANSI_BLUE+"\nset r_temp to "+Main.B+Main.ANSI_BLUE+temp+Main.R);
 
         if (getCurrentState() == on) {
             On s = (On) getCurrentState();
@@ -29,7 +29,7 @@ public class AirConditioner extends ComplexState {
 
     public void setCTemp(int temp) {
         c_Temp = temp;
-        System.out.println(Main.ANSI_BLUE+"\nset c_temp to "+Main.R+temp);
+        System.out.println(Main.ANSI_BLUE+"\nset c_temp to "+Main.B+Main.ANSI_BLUE+temp+Main.R);
         if (getCurrentState() == on) {
             On s = (On) getCurrentState();
             s.getMode().entry();

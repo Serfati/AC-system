@@ -33,7 +33,8 @@ public class Main {
     }
 
     static int startUpMenu() {
-        System.out.println(B+ANSI_YELLOW_BACKGROUND+"Tornado AC remote"+R);
+        System.out.println(B+"==============================="+R);
+        System.out.println(B+ANSI_YELLOW_BACKGROUND+"       Tornado AC remote       "+R);
         System.out.println(B+"==============================="+R);
         System.out.println("["+B+"1"+R+"] ON/OFF");
         System.out.println("["+B+"2"+R+"] + - Room Temp");
