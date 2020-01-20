@@ -13,14 +13,13 @@ public class AirConditioner extends ComplexState {
     }
 
     public void powerOn() {
-        c_Temp = 25;
-        r_Temp = 25;
         setState(wait);
     }
 
     public void setRTemp(int temp) {
         r_Temp = temp;
         System.out.println(Main.ANSI_BLUE+"\nset r_temp to "+Main.R+temp);
+
         if (getCurrentState() == on) {
             On s = (On) getCurrentState();
             s.getMode().entry();

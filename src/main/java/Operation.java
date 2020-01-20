@@ -13,6 +13,34 @@ public class Operation extends ComplexState {
 
     public void entry() {
         //TODO still missing
+        int r_Temp = AirConditioner.r_Temp;
+        int c_Temp = AirConditioner.c_Temp;
+
+        if (on.getMode().getCurrentState() instanceof Cool && r_Temp-2 >= c_Temp) {
+            this.setState(cooling);
+            this.setState(fanning);
+            AirConditioner.r_Temp = c_Temp;
+            return;
+        }
+        if (on.getMode().getCurrentState() instanceof Heat && r_Temp+2 <= c_Temp) {
+            this.setState(heating);
+            this.setState(fanning);
+            AirConditioner.r_Temp = c_Temp;
+            return;
+        }
+
+        if (on.getMode().getCurrentState() instanceof Cool && r_Temp < c_Temp) {
+            on.getMode().entry();
+            this.setState(heating);
+            AirConditioner.r_Temp = c_Temp;
+            return;
+        }
+
+        if (on.getMode().getCurrentState() instanceof Heat && r_Temp > c_Temp) {
+            on.getMode().entry();
+            this.setState(cooling);
+            return;
+        }
         this.setState(fanning);
     }
 }

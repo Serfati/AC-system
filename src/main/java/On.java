@@ -6,6 +6,8 @@ public class On extends ComplexState {
     public On(AirConditioner airConditioner) {
         mode = new Mode(this);
         operation = new Operation(this);
+        AirConditioner.c_Temp = 25;
+        AirConditioner.r_Temp = 25;
         this.context = airConditioner;
     }
 
@@ -22,9 +24,5 @@ public class On extends ComplexState {
 
     public Operation getOperation() {
         return operation;
-    }
-
-    public AirConditioner getAirConditioner() {
-        return context;
     }
 }
